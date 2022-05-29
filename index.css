@@ -1,0 +1,109 @@
+.container {
+    text-align: center;
+}
+
+/* frame for grid image */
+.frame {
+    align-self: center;
+    border: 2px solid #000;
+    border-radius: 3px;
+    overflow: hidden;
+    display:inline-block;
+    object-fit: contain;
+    margin: auto;
+}
+
+img {
+    width: 9rem;
+    height: auto;
+}
+
+/* frame on hover */
+.frame:hover.grid-image:hover {
+    border: 2px solid #0044ff;
+}
+
+/* Dark mode media queries */
+@media screen and (prefers-color-scheme: dark) {
+}
+
+.nav-bar-right {
+    height: 100%;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    transform: translateX(90%);
+    overflow-y: hidden;
+    background-color: #000;
+}
+
+.picked-img {
+    position: relative;
+    top: 100%;
+    transform: translateY(-100%);
+}
+
+.nav-bar-right:hover {
+    transform: translateX(0%);
+}
+
+.disable-select {
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
+}
+
+.header-menu {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #0044ff;
+}
+
+/* style links as buttons */
+.nav-links {
+    object-fit: fill;
+    background-color: #0044ff;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding-top: 5px;   
+    padding-bottom: 5px;
+    margin-top: 1rem;
+    width: inherit;
+    position:relative;
+    display:block;
+}
+
+.nav-links:hover {
+    background-color: #0074b7;
+    color: white;
+}
+
+li {
+    width: 100%;
+    object-fit: fill;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    position:relative;
+    display:block;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display:block;
+    position:relative;
+}
