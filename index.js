@@ -3,11 +3,19 @@
     filter: grayscale(1);
 */
 
+function myFunc() {
+    for (const iterator of document.getElementsByClassName("nome-char")) {
+        iterator.innerHTML = iterator.innerHTML.substr(0, iterator.innerText.length-4);
+    }
+}
+
+onload = myFunc;
+
 
 function grayscale(element) {
     if (element.style.webkitFilter == "grayscale(1)") {
-        element.style.webkitFilter = "grayscale(0)";
-        element.style.filter = "grayscale(0)";
+        element.style.webkitFilter = "";
+        element.style.filter = "";
     } else {
         element.style.webkitFilter = "grayscale(1)";
         element.style.filter = "grayscale(1)";

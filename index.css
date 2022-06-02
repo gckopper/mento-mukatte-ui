@@ -11,6 +11,7 @@
     display:inline-block;
     object-fit: contain;
     margin: auto;
+    position: relative;
 }
 
 img {
@@ -21,6 +22,22 @@ img {
 /* frame on hover */
 .frame:hover.grid-image:hover {
     border: 2px solid #0044ff;
+}
+
+.frame:not(:hover).grid-image:not(:hover) > .nome-char {
+    display: none;
+}
+
+.frame:hover.grid-image:hover > .nome-char {
+    display: flow-root;
+}
+
+.frame:not(:hover).picked-img:not(:hover) > .nome-char {
+    display: none;
+}
+
+.frame:hover.picked-img:hover > .nome-char {
+    display: flow-root;
 }
 
 /* Dark mode media queries */
