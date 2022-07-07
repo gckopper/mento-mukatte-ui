@@ -7,7 +7,7 @@
     <title>MentoMukatte</title>
     <link rel="stylesheet" href="index.css">
     <!-- Add js -->
-    <script src="index.js"></script>
+    <script defer src="index.js"></script>
 </head>
 
 <body class="disable-select">
@@ -17,8 +17,8 @@
         <div class="container">
             {{ range .Images }}
             <div class="grid-image frame">
+                <img class="pic" draggable="false" src="img/{{ . }}" alt="{{ . }}" >
                 <span class="nome-char">{{ . }}</span>
-                <img class="pic" draggable="false" src="img/{{ . }}" alt="{{ . }}" onclick="grayscale(this)">
             </div>
             {{ end }}
         </div>
@@ -29,8 +29,7 @@
             <li><a class="nav-links" href="index.html">Home</a></li>
             <li><a class="nav-links" href="about.html">Sobre</a></li>
             <li><a class="nav-links" href="contact.html">Contato</a></li>
-            <li><a class="nav-links"
-                    onclick="document.location=document.URL.search('delete=yes') ? document.URL : document.URL.concat('&delete=yes')">Recomeçar</a>
+            <li><a class="nav-links restart">Recomeçar</a>
             </li>
             <li>
                 <div class="nav-links numDead">0</div>
