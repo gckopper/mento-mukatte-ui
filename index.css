@@ -39,6 +39,10 @@ img {
     display: none
 }
 
+.frame:hover .nome-char {
+    display: block
+}
+
 .nome-char {
     color: white;
     position: absolute;
@@ -46,6 +50,8 @@ img {
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
+    text-align: center;
+    max-inline-size: 9rem;
 }
 
 /* Dark mode media queries */
@@ -61,6 +67,7 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    max-inline-size: 9rem;
 }
 
 .picked-img {
