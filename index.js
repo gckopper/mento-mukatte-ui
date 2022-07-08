@@ -3,6 +3,22 @@ for (const iterator of document.getElementsByClassName("nome-char")) {
     iterator.innerHTML = iterator.innerHTML.slice(0, -4);
 }
 
+for (const iterator of document.getElementsByClassName("restart")) {
+    iterator.onclick = async function () {
+        await fetch(location + "&delete=yes").then((params) => {
+            if (params.status == 200) {
+                window.location.reload(true)
+            } else {
+                alert("Erro: não deu para deletar sua sala")
+                params.text().then((text) => {
+                    alert(text)
+                })
+            }
+        })
+
+    }
+}
+
 window.alive = document.getElementsByClassName("nome-char").length - 1;
 ws = new WebSocket("ws://"+window.location.host + "/status" + window.location.search); 
 ws.onmessage = function(e) { 
