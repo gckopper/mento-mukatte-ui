@@ -19,7 +19,6 @@ for (const iterator of document.getElementsByClassName("restart")) {
     }
 }
 
-window.alive = document.getElementsByClassName("nome-char").length - 1;
 ws = new WebSocket("ws://"+window.location.host + "/status" + window.location.search); 
 ws.onmessage = function(e) { 
     document.getElementsByClassName("numDead")[0].innerHTML = "O seu oponente ainda tem: " + atob(e.data);
@@ -27,7 +26,6 @@ ws.onmessage = function(e) {
 
 for (const iterator of document.getElementsByClassName("pic")) {
     iterator.onclick = function () {
-        ws.send(btoa(window.alive--));
         if (iterator.style.webkitFilter == "grayscale(1)") {
             iterator.style.webkitFilter = "grayscale(0)";
             iterator.style.filter = "grayscale(0)";
@@ -35,6 +33,15 @@ for (const iterator of document.getElementsByClassName("pic")) {
             iterator.style.webkitFilter = "grayscale(1)";
             iterator.style.filter = "grayscale(1)";
         }
+        ws.send(btoa(function () {
+            let count = 0;
+            for (const iterator of document.getElementsByClassName("pic")) {
+                if (iterator.style.filter == "grayscale(1)") {
+                    count = count + 1;
+                }
+            }
+            return document.getElementsByClassName("pic").length - count
+        }()));
     };
 }
 
